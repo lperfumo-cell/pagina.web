@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Conocé el Colegio Aequalis, su propuesta educativa de nivel secundario y su comunidad.">
+    <title>Colegio Aequalis | Aprender, crecer y soñar</title>
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        :root {
+            --azul: #173b5e;
+            --celeste: #6bbbd2;
+            --crema: #f8f6ef;
+            --verde: #6a9b83;
+            --blanco: #ffffff;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #293746;
+            background: var(--crema);
+            line-height: 1.6;
+        }
+
+
+        section {
+            padding: 75px 8%;
+            scroll-margin-top: 100px;
+        }
+
+
+        .titulo {
+            color: var(--azul);
+            text-align: center;
+            font-size: clamp(28px, 4vw, 36px);
+            margin-bottom: 15px;
+        }
+
+
+        .subtitulo {
+            color: #667582;
+            max-width: 720px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+
+        .boton {
+            display: inline-block;
+            padding: 14px 25px;
+            border-radius: 30px;
+            background: var(--celeste);
+            color: #102e4b;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+
+        .boton:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* ENCABEZADO */
+
+
+        header {
+            background: white;
+            padding: 15px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px #00000012;
+        }
+
+
+        .logo {
+            color: var(--azul);
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            text-decoration: none;
+        }
+
+
+        .logo span {
+            display: block;
+            font-size: 10px;
+            letter-spacing: 4px;
+            color: var(--verde);
+            text-align: center;
+        }
+
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
+        nav a {
+            color: var(--azul);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        nav a:hover {
+            color: var(--celeste);
+        }
+
+
+        /* PORTADA */
+
+
+        .hero {
+            min-height: 570px;
+            padding: 90px 8%;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(90deg, #102e4bf0, #173b5e80),
+                url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=85")
+                center/cover;
+        }
+
+
+        .hero-content {
+            max-width: 680px;
+        }
+
+
+        .etiqueta {
+            color: #d2edf2;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 66px);
+            line-height: 1.12;
+            margin: 20px 0;
+        }
+
+
+        .hero p {
+            font-size: 19px;
+            max-width: 570px;
+            margin-bottom: 30px;
+        }
+
+
+        /* PRESENTACIÓN */
+
+
+        .nosotros {
+            background: white;
+        }
+
+
+        .nosotros-contenido {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+
+        .nosotros-contenido p + p {
+            margin-top: 20px;
+        }
+
+
+        /* VALORES */
+
+
+        .valores {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+
+        .tarjeta {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 25px #173b5e0b;
+            transition: 0.3s;
+        }
+
+
+        .tarjeta:hover {
+            transform: translateY(-6px);
+        }
+
+
+        .icono {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+
+        .tarjeta h3 {
+            color: var(--azul);
+            margin-bottom: 12px;
+        }
+
+
+        /* PROPUESTA EDUCATIVA */
+
+
+        .propuesta {
+            background: var(--azul);
+            color: white;
+            text-align: center;
+        }
+
+
+        .propuesta .titulo {
+            color: white;
+        }
+
+
+        .propuesta p {
+            max-width: 760px;
+            margin: 0 auto 25px;
+            font-size: 18px;
+        }
+
+
+        /* CONTACTO */
+
+
+        .contacto {
+            background: var(--crema);
+        }
+
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+            max-width: 1150px;
+            margin: 40px auto;
+        }
+
+
+        .contacto-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px 22px;
+            text-align: center;
+            box-shadow: 0 8px 25px #173b5e0b;
+            border-bottom: 4px solid var(--celeste);
+            transition: 0.3s;
+            overflow-wrap: anywhere;
+        }
+
+
+        .contacto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px #173b5e18;
+        }
+
+
+        .contacto-icono {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+
+        .contacto-card h3 {
+            color: var(--azul);
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+
+        .contacto-card p {
+            color: #526273;
+            margin: 8px 0;
+            font-size: 15px;
+        }
+
+
+        .contacto-link {
+            display: inline-block;
+            margin-top: 16px;
+            color: var(--azul);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--celeste);
+            padding-bottom: 4px;
+        }
+
+
+        .contacto-link:hover {
+            color: #4c91a8;
+        }
+
+
+        .contacto-final {
+            text-align: center;
+            background: var(--azul);
+            color: white;
+            border-radius: 20px;
+            padding: 40px 25px;
+            max-width: 900px;
+            margin: 45px auto 0;
+        }
+
+
+        .contacto-final h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+
+        .contacto-final p {
+            margin-bottom: 25px;
+        }
+
+
+        /* PIE DE PÁGINA */
+
+
+        footer {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 25px 8%;
+            font-size: 14px;
+        }
+
+
+        footer p + p {
+            margin-top: 5px;
+            color: #d2edf2;
+        }
+
+
+        /* ADAPTACIÓN A CELULARES */
+
+
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+            }
+
+
+            .valores,
+            .contacto-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+
+        @media (max-width: 600px) {
+            header {
+                padding: 15px 5%;
+            }
+
+
+            nav {
+                gap: 12px;
+            }
+
+
+            nav a {
+                font-size: 12px;
+            }
+
+
+            .hero {
+                min-height: 500px;
+                padding: 65px 7%;
+            }
+
+
+            .hero p {
+                font-size: 17px;
+            }
+
+
+            section {
+                padding: 55px 7%;
+            }
+
+
+            .valores,
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .contacto-final h3 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+<header>
+    <a href="#inicio" class="logo">
+        AEQUALIS
+        <span>COLEGIO</span>
+    </a>
+
+
+    <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#valores">Nuestros valores</a>
+        <a href="#propuesta">Propuesta educativa</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+</header>
+
+
+<main>
+
+
+    <!-- PORTADA -->
+
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <span class="etiqueta">Colegio Aequalis</span>
+            <h1>Un lugar para aprender, crecer y soñar.</h1>
+            <p>
+                Cada estudiante tiene un potencial único.
+                Acompañar su crecimiento es el comienzo
+                de un futuro lleno de posibilidades.
+            </p>
+            <a href="#nosotros" class="boton">
+                Conocé nuestro colegio
+            </a>
+        </div>
+    </section>
+
+
+    <!-- PRESENTACIÓN -->
+
+
+    <section class="nosotros" id="nosotros">
+        <h2 class="titulo">Bienvenidos a Aequalis</h2>
+        <p class="subtitulo">
+            Un espacio donde la educación abre puertas
+            y cada persona importa.
+        </p>
+
+
+        <div class="nosotros-contenido">
+            <p>
+                En el Colegio Aequalis creemos que educar es
+                mucho más que enseñar contenidos. Es acompañar
+                a cada estudiante en su desarrollo, fomentar
+                la curiosidad y construir herramientas para
+                desenvolverse en el mundo.
+            </p>
+
+
+            <p>
+                Nuestra propuesta de nivel secundario busca
+                acompañar a los jóvenes en una etapa fundamental
+                de su formación, promoviendo el aprendizaje,
+                la responsabilidad y el desarrollo personal.
+            </p>
+
+
+            <p>
+                Queremos que cada alumno pueda descubrir sus
+                capacidades, aprender con entusiasmo y crecer
+                en un entorno de respeto y colaboración.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- VALORES -->
+
+
+    <section id="valores">
+        <h2 class="titulo">Lo que nos inspira</h2>
+        <p class="subtitulo">
+            Los valores que queremos construir cada día.
+        </p>
+
+
+        <div class="valores">
+            <article class="tarjeta">
+                <div class="icono">📚</div>
+                <h3>Aprendizaje</h3>
+                <p>
+                    Promovemos la curiosidad, el pensamiento
+                    crítico y las ganas de descubrir cosas nuevas.
+                </p>
+            </article>
+
+
+            <article class="tarjeta">
+                <div class="icono">🤝</div>
+                <h3>Respeto e inclusión</h3>
+                <p>
+                    Valoramos las diferencias y buscamos que
+                    cada estudiante se sienta escuchado y respetado.
+                </p>
+            </article>
+
+
+            <article class="tarjeta">
+                <div class="icono">🌱</div>
+                <h3>Crecimiento personal</h3>
+                <p>
+                    Acompañamos el desarrollo de la autonomía,
+                    la creatividad y la confianza en uno mismo.
+                </p>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- PROPUESTA EDUCATIVA -->
+
+
+    <section class="propuesta" id="propuesta">
+        <h2 class="titulo">Educación para el futuro</h2>
+
+
+        <p>
+            Aprender, compartir, explorar y crear son parte
+            del camino. En Aequalis queremos impulsar una
+            educación que prepare a los estudiantes para
+            afrontar nuevos desafíos y construir sus propios
+            proyectos.
+        </p>
+
+
+        <p>
+            La escuela secundaria es una oportunidad para
+            desarrollar conocimientos, fortalecer vínculos
+            y comenzar a proyectar el futuro.
+        </p>
+
+
+        <a href="#contacto" class="boton">
+            Descubrí Aequalis
+        </a>
+    </section>
+
+
+    <!-- CONTACTO Y HORARIOS -->
+
+
+    <section class="contacto" id="contacto">
+        <h2 class="titulo">Conocé el Colegio Aequalis</h2>
+
+
+        <p class="subtitulo">
+            Estamos para acompañarte. Contactanos para conocer
+            nuestra propuesta educativa de nivel secundario.
+        </p>
+
+
+        <div class="contacto-grid">
+
+
+            <article class="contacto-card">
+                <div class="contacto-icono">📍</div>
+                <h3>Nuestra dirección</h3>
+                <p>Crámer 1222</p>
+                <p>C1426AOB, Ciudad Autónoma de Buenos Aires</p>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Cramer+1222+C1426AOB+Buenos+Aires"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contacto-link">
+                    Cómo llegar
+                </a>
+            </article>
+
+
+            <article class="contacto-card">
+                <div class="contacto-icono">📞</div>
+                <h3>Teléfono</h3>
+                <p>011 4554-0771</p>
+
+
+                <a href="tel:+541145540771" class="contacto-link">
+                    Llamar al colegio
+                </a>
+            </article>
+
+
+            <article class="contacto-card">
+                <div class="contacto-icono">✉️</div>
+                <h3>Correo electrónico</h3>
+                <p>secsecundario@aequalis.edu.ar</p>
+
+
+                <a
+                    href="mailto:secsecundario@aequalis.edu.ar"
+                    class="contacto-link">
+                    Enviar un correo
+                </a>
+            </article>
+
+
+            <article class="contacto-card">
+                <div class="contacto-icono">🕒</div>
+                <h3>Horarios escolares</h3>
+
+
+                <p><strong>Lunes a jueves:</strong></p>
+                <p>8:20 a 16:20 hs.</p>
+
+
+                <p><strong>Viernes:</strong></p>
+                <p>8:20 a 12:20 hs.</p>
+            </article>
+
+
+            <article class="contacto-card">
+                <div class="contacto-icono">🏫</div>
+                <h3>Atención administrativa</h3>
+
+
+                <p><strong>Martes, jueves y viernes:</strong></p>
+                <p>8:45 a 12:10 hs.</p>
+
+
+                <p><strong>Lunes y miércoles:</strong></p>
+                <p>8:45 a 12:10 hs. y hasta las 16:10 hs.</p>
+            </article>
+
+
+        </div>
+
+
+        <div class="contacto-final">
+            <h3>¡Te esperamos en Aequalis!</h3>
+
+
+            <p>
+                Descubrí nuestra propuesta educativa y conocé
+                una comunidad donde aprender y crecer.
+            </p>
+
+
+            <a
+                href="mailto:secsecundario@aequalis.edu.ar?subject=Consulta%20sobre%20el%20nivel%20secundario"
+                class="boton">
+                Consultar por el secundario
+            </a>
+        </div>
+    </section>
+
+
+</main>
+
+
+<footer>
+    <p>&copy; <span id="anio"></span> Colegio Aequalis.</p>
+    <p>Aprender juntos, crecer siempre.</p>
+</footer>
+
+
+<script>
+    document.getElementById("anio").textContent =
+        new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World!</h1>
+      <p id="currentTime"></p>
+      <script src="script.js"></script>
+  </body>
+</html>
